@@ -1,0 +1,1116 @@
+{
+ "ver": 1,
+ "app": "Zippy_Recap",
+ "steps": [
+  "idle",
+  "video",
+  "part",
+  "voice",
+  "ready",
+  "render",
+  "done"
+ ],
+ "intents": [
+  {
+   "id": "pick_video",
+   "cat": "command",
+   "say": [
+    "video ရွေး",
+    "video ပို့",
+    "video ထည့်",
+    "ဇာတ်ကား ထည့်",
+    "ဇာတ်ကားရွေး",
+    "movie",
+    "pick video",
+    "add video",
+    "ဗီဒီယို ရွေး",
+    "ဗီဒီယိုထည့်",
+    "video ပြောင်း",
+    "ကား ထည့်"
+   ],
+   "reply": [],
+   "do": "pick_video"
+  },
+  {
+   "id": "new_project",
+   "cat": "command",
+   "say": [
+    "project အသစ်",
+    "အသစ်",
+    "new",
+    "new project",
+    "chat အသစ်",
+    "ဇာတ်ကား အသစ်",
+    "နောက်ကား",
+    "အသစ်စမယ်",
+    "ပရောဂျက်အသစ်"
+   ],
+   "reply": [],
+   "do": "new_project"
+  },
+  {
+   "id": "list_projects",
+   "cat": "command",
+   "say": [
+    "project list",
+    "projects",
+    "chat list",
+    "project တွေ",
+    "စာရင်း",
+    "ဘယ်နှစ်ကား ရှိလဲ",
+    "ကားတွေ ပြ",
+    "menu"
+   ],
+   "reply": [],
+   "do": "list_projects"
+  },
+  {
+   "id": "rename_project",
+   "cat": "command",
+   "say": [
+    "နာမည်ပြောင်း",
+    "rename",
+    "နာမည် ပေး",
+    "project နာမည်",
+    "ခေါင်းစဉ် ပြောင်း"
+   ],
+   "reply": [],
+   "do": "rename_project"
+  },
+  {
+   "id": "delete_project",
+   "cat": "command",
+   "say": [
+    "project ဖျက်",
+    "ဒီ project ဖျက်",
+    "delete project",
+    "chat ဖျက်",
+    "ချက်ဖျက်",
+    "ဒီကား ဖျက်",
+    "ဖျက်ပစ်"
+   ],
+   "reply": [],
+   "do": "delete_project"
+  },
+  {
+   "id": "clear_chat",
+   "cat": "command",
+   "say": [
+    "chat ရှင်း",
+    "စာတွေ ရှင်း",
+    "clear",
+    "clear chat",
+    "message ဖျက်"
+   ],
+   "reply": [],
+   "do": "clear_chat"
+  },
+  {
+   "id": "status",
+   "cat": "command",
+   "say": [
+    "status",
+    "ဘယ်လောက်ပြီးပြီလဲ",
+    "ဘယ်အဆင့်လဲ",
+    "ဘယ်ရောက်ပြီလဲ",
+    "အခြေအနေ",
+    "progress",
+    "ပြီးပြီလား",
+    "ကျန်သေးလား"
+   ],
+   "reply": [],
+   "do": "status"
+  },
+  {
+   "id": "help",
+   "cat": "command",
+   "say": [
+    "help",
+    "ကူညီပါ",
+    "ဘာလုပ်တတ်လဲ",
+    "ဘာတွေလုပ်လို့ရလဲ",
+    "command",
+    "လမ်းညွှန်",
+    "ဘယ်လိုသုံးရမလဲ",
+    "အကူအညီ"
+   ],
+   "reply": [
+    "Zippy_Recap လုပ်ပေးတာ 👇\n• 🎬 ဇာတ်ကား (~၂ နာရီ) ပို့ → Recap ဘယ်နှမိနစ် (10/12/15)\n• ✂ အပိုင်းလိုက် AI ဖိုင် → 💾 Save + 📋 prompt → Gemini မှာ upload\n• AI အဖြေကို ဒီ chat ထဲ paste → ✓ ဇာတ်ကြောင်း\n• 🎙 အသံ · 🎯 အရှည်ကိုက် → 🎬 Recap ထုတ် → 💾 Gallery\n• ✏️ Editor: စာကြောင်းပြင် · ▶ ကြည့် · အသံ · setting\n• ☰ project တွေ · `project အသစ်` · `နာမည်ပြောင်း` · `status`"
+   ],
+   "chips": [
+    {
+     "label": "✏️ Editor",
+     "do": "open_editor"
+    },
+    {
+     "label": "📊 Status",
+     "do": "status"
+    }
+   ]
+  },
+  {
+   "id": "make_ai",
+   "cat": "command",
+   "when": [
+    "part"
+   ],
+   "say": [
+    "ဖြတ်",
+    "ဖိုင်လုပ်",
+    "ai ဖိုင်",
+    "ai ဖိုင်လုပ်",
+    "cut",
+    "ဖြတ်ပေး",
+    "ဒီအပိုင်း ဖြတ်",
+    "make",
+    "✂"
+   ],
+   "reply": [],
+   "do": "make_ai"
+  },
+  {
+   "id": "save_ai",
+   "cat": "command",
+   "when": [
+    "part"
+   ],
+   "say": [
+    "save",
+    "သိမ်း",
+    "ဖိုင်သိမ်း",
+    "download",
+    "ai ဖိုင် သိမ်း",
+    "save လုပ်",
+    "💾"
+   ],
+   "reply": [],
+   "do": "save_ai"
+  },
+  {
+   "id": "copy_prompt",
+   "cat": "command",
+   "when": [
+    "part"
+   ],
+   "say": [
+    "prompt",
+    "prompt ပေး",
+    "prompt ကူး",
+    "prompt copy",
+    "prompt ပြန်ပေး",
+    "copy prompt",
+    "ကော်ပီ"
+   ],
+   "reply": [],
+   "do": "copy_prompt"
+  },
+  {
+   "id": "paste_reply",
+   "cat": "command",
+   "when": [
+    "part"
+   ],
+   "say": [
+    "paste",
+    "ပေ့စ်",
+    "ထည့်",
+    "ai အဖြေ",
+    "အဖြေ ထည့်",
+    "ai ရေးတာ ထည့်"
+   ],
+   "reply": [],
+   "do": "paste_reply"
+  },
+  {
+   "id": "next_part",
+   "cat": "command",
+   "when": [
+    "part"
+   ],
+   "say": [
+    "next",
+    "နောက်တစ်ပိုင်း",
+    "နောက်အပိုင်း",
+    "ဆက်",
+    "ဆက်လုပ်",
+    "next part",
+    "ရှေ့ဆက်",
+    "ok နောက်"
+   ],
+   "reply": [],
+   "do": "next_part"
+  },
+  {
+   "id": "prev_part",
+   "cat": "command",
+   "when": [
+    "part"
+   ],
+   "say": [
+    "အရင်အပိုင်း",
+    "နောက်ပြန်",
+    "prev",
+    "back",
+    "ရှေ့အပိုင်း ပြန်",
+    "previous"
+   ],
+   "reply": [],
+   "do": "prev_part"
+  },
+  {
+   "id": "redo_part",
+   "cat": "command",
+   "when": [
+    "part"
+   ],
+   "say": [
+    "ပြန်ရေး",
+    "ဒီအပိုင်း ပြန်လုပ်",
+    "ai ပြန်ရေး",
+    "ပြန်ထည့်",
+    "အဖြေ ပြန်ထည့်",
+    "redo"
+   ],
+   "reply": [],
+   "do": "redo_part"
+  },
+  {
+   "id": "skip_voice",
+   "cat": "command",
+   "when": [
+    "part"
+   ],
+   "say": [
+    "အသံရွေးမယ်",
+    "voice",
+    "အသံ ဆီ",
+    "ဒီအတိုင်း ဆက်",
+    "ကျန်တာ နောက်မှ",
+    "အသံသွား"
+   ],
+   "reply": [],
+   "do": "goto_voice"
+  },
+  {
+   "id": "open_editor",
+   "cat": "command",
+   "say": [
+    "editor",
+    "edit",
+    "ပြင်",
+    "ပြင်မယ်",
+    "ဇာတ်ကြောင်း ပြင်",
+    "စာကြောင်း ပြင်",
+    "ကြည့်မယ်",
+    "ဇာတ်ကြောင်း ကြည့်",
+    "အီဒီတာ",
+    "✏️"
+   ],
+   "reply": [],
+   "do": "open_editor"
+  },
+  {
+   "id": "change_voice",
+   "cat": "command",
+   "say": [
+    "အသံပြောင်း",
+    "အသံ ရွေး",
+    "change voice",
+    "ဘယ်သူ့အသံ",
+    "အမျိုးသားအသံ",
+    "အမျိုးသမီးအသံ",
+    "voice change"
+   ],
+   "reply": [],
+   "do": "ask_voice"
+  },
+  {
+   "id": "voice_nilar",
+   "cat": "command",
+   "say": [
+    "နီလာ",
+    "nilar",
+    "မိန်းကလေးအသံ",
+    "အမျိုးသမီး"
+   ],
+   "reply": [],
+   "do": "pick_voice:Nilar"
+  },
+  {
+   "id": "voice_thiha",
+   "cat": "command",
+   "say": [
+    "သီဟ",
+    "thiha",
+    "ယောကျ်ားလေးအသံ",
+    "အမျိုးသား"
+   ],
+   "reply": [],
+   "do": "pick_voice:Thiha"
+  },
+  {
+   "id": "listen",
+   "cat": "command",
+   "say": [
+    "နားထောင်",
+    "အသံ နားထောင်",
+    "listen",
+    "preview",
+    "🔊",
+    "စမ်းနားထောင်"
+   ],
+   "reply": [],
+   "do": "voice_preview"
+  },
+  {
+   "id": "fit_rate",
+   "cat": "command",
+   "say": [
+    "ကိုက်အောင်",
+    "အရှည်ကိုက်",
+    "fit",
+    "🎯",
+    "မိနစ်နဲ့ကိုက်",
+    "အမြန်နှုန်း ညှိ",
+    "speed ညှိ"
+   ],
+   "reply": [],
+   "do": "fit_rate"
+  },
+  {
+   "id": "speed_up",
+   "cat": "command",
+   "say": [
+    "မြန်မြန်",
+    "ပိုမြန်",
+    "faster",
+    "speed up",
+    "အသံမြန်"
+   ],
+   "reply": [],
+   "do": "rate:+5"
+  },
+  {
+   "id": "speed_down",
+   "cat": "command",
+   "say": [
+    "ဖြေးဖြေး",
+    "ပိုနှေး",
+    "slower",
+    "speed down",
+    "အသံနှေး"
+   ],
+   "reply": [],
+   "do": "rate:-5"
+  },
+  {
+   "id": "render",
+   "cat": "command",
+   "say": [
+    "ထုတ်",
+    "ထုတ်မယ်",
+    "render",
+    "video ထုတ်",
+    "recap ထုတ်",
+    "export",
+    "🎬",
+    "ထုတ်ပေး",
+    "စထုတ်"
+   ],
+   "reply": [],
+   "do": "render"
+  },
+  {
+   "id": "stop",
+   "cat": "command",
+   "when": [
+    "render"
+   ],
+   "say": [
+    "ရပ်",
+    "stop",
+    "ရပ်လိုက်",
+    "cancel",
+    "မထုတ်တော့ဘူး",
+    "ခဏရပ်"
+   ],
+   "reply": [],
+   "do": "stop"
+  },
+  {
+   "id": "play",
+   "cat": "command",
+   "when": [
+    "done"
+   ],
+   "say": [
+    "ကြည့်",
+    "play",
+    "▶",
+    "ဖွင့်ကြည့်",
+    "video ကြည့်"
+   ],
+   "reply": [],
+   "do": "play"
+  },
+  {
+   "id": "save_out",
+   "cat": "command",
+   "when": [
+    "done"
+   ],
+   "say": [
+    "gallery",
+    "gallery သိမ်း",
+    "သိမ်း",
+    "save",
+    "ဖုန်းထဲ သိမ်း",
+    "💾"
+   ],
+   "reply": [],
+   "do": "save_out"
+  },
+  {
+   "id": "share_out",
+   "cat": "command",
+   "when": [
+    "done"
+   ],
+   "say": [
+    "share",
+    "ရှဲ",
+    "ပို့",
+    "telegram ပို့",
+    "📤",
+    "facebook တင်"
+   ],
+   "reply": [],
+   "do": "share_out"
+  },
+  {
+   "id": "clean",
+   "cat": "command",
+   "say": [
+    "ရှင်း",
+    "storage",
+    "ယာယီဖိုင်ရှင်း",
+    "cache",
+    "🧹",
+    "နေရာလွတ်",
+    "ဖုန်းပြည့်"
+   ],
+   "reply": [],
+   "do": "clean"
+  },
+  {
+   "id": "cancel",
+   "cat": "command",
+   "say": [
+    "မလုပ်တော့ဘူး",
+    "နေပါစေ",
+    "မလိုဘူး",
+    "no",
+    "cancel"
+   ],
+   "reply": [
+    "ရပါတယ် 👍"
+   ]
+  },
+  {
+   "id": "test_render",
+   "cat": "command",
+   "say": [
+    "စမ်းထုတ်",
+    "test",
+    "🧪",
+    "ဒီအပိုင်းပဲ ထုတ်",
+    "တစ်ပိုင်းပဲ ထုတ်",
+    "စမ်းကြည့်မယ်",
+    "test render"
+   ],
+   "reply": [],
+   "do": "test_part"
+  },
+  {
+   "id": "sync_check",
+   "cat": "command",
+   "say": [
+    "ကိုက်ညီလား",
+    "sync",
+    "ပုံနဲ့အသံ ကိုက်လား",
+    "ကိုက်လား",
+    "ပုံလွဲနေတယ်",
+    "အသံနဲ့ပုံ မကိုက်ဘူး",
+    "ညီလား"
+   ],
+   "reply": [],
+   "do": "show_sync"
+  },
+  {
+   "id": "faq_sync",
+   "cat": "faq",
+   "say": [
+    "ပုံနဲ့ စကား ဘယ်လိုကိုက်အောင်လုပ်လဲ",
+    "ဘယ်လို ကိုက်အောင်",
+    "timestamp",
+    "shot",
+    "📍"
+   ],
+   "reply": [
+    "🎙 အသံကို အရင်ထုတ်ပြီး ပုံကို အသံအရှည် အတိအကျ ဖြတ်တယ် · ✂ လုပ်တုန်း shot ပြောင်းတဲ့နေရာတွေ ရှာထားပြီး AI ပေးတဲ့ အချိန်ကို အနီးဆုံး shot အစဆီ 📍 ကပ်တယ် · 🧪 တစ်ပိုင်း စမ်းထုတ်ရင် ပုံပေါ်မှာ အချိန်နဲ့ စာကြောင်း နံပါတ် ပြမယ်"
+   ],
+   "chips": [
+    {
+     "label": "🧪 စမ်းထုတ်",
+     "do": "test_part"
+    }
+   ]
+  },
+  {
+   "id": "greet",
+   "cat": "smalltalk",
+   "when": [
+    "idle"
+   ],
+   "say": [
+    "hi",
+    "hello",
+    "hey",
+    "မင်္ဂလာပါ",
+    "ဟိုင်း",
+    "ဟယ်လို",
+    "မဂ်လာပါ",
+    "ဟေး"
+   ],
+   "reply": [
+    "မင်္ဂလာပါ 👋 ဒီနေ့ ဘယ်ဇာတ်ကား recap လုပ်မလဲ?",
+    "ဟိုင်း 😊 ဇာတ်ကားတစ်ကား ပို့လိုက်လေ၊ အတူတူ recap လုပ်ကြမယ်။"
+   ],
+   "chips": [
+    {
+     "label": "🎬 Video ရွေး",
+     "do": "pick_video"
+    },
+    {
+     "label": "❓ help",
+     "say": "help"
+    }
+   ]
+  },
+  {
+   "id": "greet_any",
+   "cat": "smalltalk",
+   "say": [
+    "hi",
+    "hello",
+    "hey",
+    "မင်္ဂလာပါ",
+    "ဟိုင်း",
+    "ဟယ်လို",
+    "မဂ်လာပါ",
+    "ဟေး"
+   ],
+   "reply": [
+    "ဟိုင်း 😊 {stepText}"
+   ],
+   "chips": [
+    {
+     "label": "📊 Status",
+     "do": "status"
+    }
+   ]
+  },
+  {
+   "id": "thanks",
+   "cat": "smalltalk",
+   "say": [
+    "ကျေးဇူး",
+    "ကျေးဇူးပါ",
+    "ကျေးဇူးတင်ပါတယ်",
+    "thanks",
+    "thank you",
+    "thx",
+    "tq"
+   ],
+   "reply": [
+    "ရပါတယ် 😊",
+    "ဘာမှမဟုတ်ပါဘူး 💛 နောက်တစ်ကားလည်း လုပ်ကြမယ်နော်။"
+   ]
+  },
+  {
+   "id": "bye",
+   "cat": "smalltalk",
+   "say": [
+    "bye",
+    "ဘိုင်",
+    "သွားပြီ",
+    "နောက်မှတွေ့မယ်",
+    "good night",
+    "ဂွတ်နိုက်"
+   ],
+   "reply": [
+    "ဘိုင် 👋 project က ဒီမှာပဲ ရှိနေမယ် — ပြန်လာရင် ဆက်လုပ်လို့ရတယ်။"
+   ]
+  },
+  {
+   "id": "who",
+   "cat": "smalltalk",
+   "say": [
+    "မင်းဘယ်သူလဲ",
+    "ဘယ်သူလဲ",
+    "who are you",
+    "နာမည်ဘယ်လိုခေါ်လဲ",
+    "zippy ဆိုတာ"
+   ],
+   "reply": [
+    "Zippy ပါ 🤖 ဇာတ်ကား ၂ နာရီကို ၁၀–၁၅ မိနစ် မြန်မာ recap ဖြစ်အောင် ကူလုပ်ပေးတဲ့ သူငယ်ချင်းပါ။"
+   ]
+  },
+  {
+   "id": "how_are_you",
+   "cat": "smalltalk",
+   "say": [
+    "နေကောင်းလား",
+    "ဘယ်လိုလဲ",
+    "how are you",
+    "အဆင်ပြေလား"
+   ],
+   "reply": [
+    "နေကောင်းပါတယ် 😊 မင်းရော? ဒီနေ့ ဘယ်ကားလုပ်မလဲ?"
+   ]
+  },
+  {
+   "id": "praise",
+   "cat": "smalltalk",
+   "say": [
+    "မိုက်တယ်",
+    "ကောင်းတယ်",
+    "အရမ်းကောင်း",
+    "nice",
+    "good",
+    "great",
+    "awesome",
+    "သဘောကျတယ်"
+   ],
+   "reply": [
+    "ကျေးဇူးနော် 🥰",
+    "ဝမ်းသာလိုက်တာ ✨"
+   ]
+  },
+  {
+   "id": "laugh",
+   "cat": "smalltalk",
+   "say": [
+    "haha",
+    "ဟားဟား",
+    "lol",
+    "😂",
+    "ရယ်ရတယ်"
+   ],
+   "reply": [
+    "😄"
+   ]
+  },
+  {
+   "id": "ok",
+   "cat": "smalltalk",
+   "say": [
+    "ok",
+    "okay",
+    "အိုကေ",
+    "ဟုတ်",
+    "ဟုတ်ကဲ့",
+    "ရပြီ",
+    "ကောင်းပြီ"
+   ],
+   "reply": [
+    "👍 {stepText}"
+   ]
+  },
+  {
+   "id": "frustrated",
+   "cat": "smalltalk",
+   "say": [
+    "မရဘူး",
+    "ဘာလို့မရတာလဲ",
+    "စိတ်ညစ်တယ်",
+    "အလုပ်မလုပ်ဘူး",
+    "ပျက်နေတယ်",
+    "error"
+   ],
+   "reply": [
+    "စိတ်မညစ်နဲ့နော် 🙏 ဘယ်အဆင့်မှာ မရတာလဲ? 📊 status ကြည့်ပြီး ပြန်စမ်းကြည့်ရအောင်။"
+   ],
+   "chips": [
+    {
+     "label": "📊 Status",
+     "do": "status"
+    },
+    {
+     "label": "🧹 ရှင်း",
+     "do": "clean"
+    }
+   ]
+  },
+  {
+   "id": "faq_what",
+   "cat": "faq",
+   "say": [
+    "recap ဆိုတာ",
+    "ဒီ app ဘာလုပ်တာလဲ",
+    "zippy recap ဆိုတာ",
+    "ဘာ app လဲ"
+   ],
+   "reply": [
+    "ဇာတ်ကား ~၂ နာရီကို AI နဲ့ ဇာတ်ကြောင်းရေးပြီး မြန်မာအသံနဲ့ ၁၀–၁၅ မိနစ် recap video ဖြစ်အောင် လုပ်ပေးတာပါ 🎬"
+   ]
+  },
+  {
+   "id": "faq_ai",
+   "cat": "faq",
+   "say": [
+    "ဘယ် ai သုံးရမလဲ",
+    "ai ဘာသုံးရ",
+    "gemini",
+    "chatgpt ရလား",
+    "which ai",
+    "ai app"
+   ],
+   "reply": [
+    "Video ကို ကြည့်နိုင်တဲ့ AI လိုတယ် — Gemini (app / AI Studio) က အကောင်းဆုံး 👍 ✂ ဖိုင်ကို upload ပြီး 📋 prompt ကို paste ပါ။"
+   ]
+  },
+  {
+   "id": "faq_free",
+   "cat": "faq",
+   "say": [
+    "gemini free",
+    "အခမဲ့",
+    "free နဲ့ရလား",
+    "pro လို",
+    "ဘယ်နှမိနစ်ကြည့်လဲ",
+    "video အရှည် ai"
+   ],
+   "reply": [
+    "App က ဇာတ်ကားကို 10' စီ ခွဲပြီး 2× နဲ့ ~၅ မိနစ်ဖိုင် လုပ်ပေးတယ် — Gemini Free နဲ့လည်း ရတယ် 👍"
+   ]
+  },
+  {
+   "id": "faq_time",
+   "cat": "faq",
+   "say": [
+    "ဘယ်လောက်ကြာလဲ",
+    "ကြာလား",
+    "ထုတ်ရတာ ကြာ",
+    "how long",
+    "ဘယ်နှမိနစ်ကြာ"
+   ],
+   "reply": [
+    "ဖုန်းပေါ် မူတည်တယ် — recap ၁၂ မိနစ်ကို ⚡ ဖုန်း encoder နဲ့ ၁၀–၂၅ မိနစ်လောက်။ Screen ပိတ်လည်း ဆက်ထုတ်နေမယ် 📱"
+   ]
+  },
+  {
+   "id": "faq_internet",
+   "cat": "faq",
+   "say": [
+    "internet လိုလား",
+    "အင်တာနက်",
+    "offline ရလား",
+    "data ကုန်လား",
+    "wifi"
+   ],
+   "reply": [
+    "🎙 အသံ (Edge TTS) အတွက်ပဲ internet လိုတယ်။ ✂ ဖြတ်တာ · 🎬 ထုတ်တာ offline ရ။"
+   ]
+  },
+  {
+   "id": "faq_where",
+   "cat": "faq",
+   "say": [
+    "ဘယ်မှာသိမ်းလဲ",
+    "ဖိုင်ဘယ်ရောက်လဲ",
+    "where saved",
+    "ဘယ်မှာရှာရမလဲ",
+    "folder"
+   ],
+   "reply": [
+    "✂ AI ဖိုင် → Download/Zippy_Recap_AI · 🎬 Recap → 💾 နှိပ်ရင် Movies/Zippy_Recap (Gallery)"
+   ]
+  },
+  {
+   "id": "faq_timecode",
+   "cat": "faq",
+   "say": [
+    "timecode",
+    "အချိန် ပုံပေါ်မှာ",
+    "ဘယ်ဘက်အပေါ် နံပါတ်",
+    "အချိန်စာ"
+   ],
+   "reply": [
+    "✂ ဖိုင်ပေါ်က အဖြူရောင် အချိန်က ဇာတ်ကား အချိန်အစစ် — AI က အဲ့အချိန်နဲ့ ရေးလို့ recap မှာ ပုံ-စာ မလွဲတော့ဘူး ⏱ (recap ထဲမှာ မပါ)"
+   ]
+  },
+  {
+   "id": "faq_format",
+   "cat": "faq",
+   "say": [
+    "ai အဖြေ ပုံစံ",
+    "ဘယ်လိုရေးရမလဲ",
+    "format",
+    "အဖြေ ဘယ်လို"
+   ],
+   "reply": [
+    "AI အဖြေထဲမှာ `[00:20:05-00:20:15] ဇာတ်ကြောင်း…` လို အချိန်ပါတဲ့ စာကြောင်းတွေ ရှိရမယ်။ 📋 prompt ထဲမှာ ပြောထားပြီးသား 👍"
+   ]
+  },
+  {
+   "id": "faq_length",
+   "cat": "faq",
+   "say": [
+    "10 မိနစ် နဲ့ 15 မိနစ်",
+    "ဘယ်နှမိနစ် ကောင်းလဲ",
+    "recap အရှည်",
+    "ဘယ်လောက်ရှည်ရမလဲ"
+   ],
+   "reply": [
+    "Facebook/YouTube အတွက် 10–12 မိနစ်က လူကြည့်အများဆုံး 👍 ဇာတ်လမ်းရှုပ်ရင် 15။"
+   ]
+  },
+  {
+   "id": "faq_nosound",
+   "cat": "faq",
+   "say": [
+    "အသံမထွက်",
+    "အသံမပါ",
+    "no sound",
+    "အသံ ပျောက်"
+   ],
+   "reply": [
+    "Internet စစ်ပြီး 🔊 နားထောင် စမ်းကြည့်ပါ။ မူရင်းသံ မလိုရင် ✏️ Editor › 📐 › 🔉 မထည့် ရွေးပါ။"
+   ]
+  },
+  {
+   "id": "faq_slow",
+   "cat": "faq",
+   "say": [
+    "နှေးတယ်",
+    "ဖုန်းပူတယ်",
+    "ကြာလွန်း",
+    "slow",
+    "lag"
+   ],
+   "reply": [
+    "✏️ Editor › 📐 မှာ 480p · ⚡ ဖုန်း encoder ရွေးရင် ပိုမြန်တယ်။ ဖုန်းအား ပိုတာ အားသွင်းရင်း ထုတ်ပါ 🔌"
+   ]
+  },
+  {
+   "id": "faq_stopped",
+   "cat": "faq",
+   "say": [
+    "ရပ်သွားတယ်",
+    "crash",
+    "app ပိတ်သွား",
+    "ပြန်စရမလား",
+    "ထုတ်တာ ပျက်"
+   ],
+   "reply": [
+    "ပြန်ထုတ်ရင် ပြီးပြီးသား အပိုင်းတွေ ပြန်မလုပ်ဘူး — ကျန်တာပဲ ဆက်လုပ်မယ် 👍"
+   ],
+   "chips": [
+    {
+     "label": "🎬 ပြန်ထုတ်",
+     "do": "render"
+    }
+   ]
+  },
+  {
+   "id": "faq_copyright",
+   "cat": "faq",
+   "say": [
+    "copyright",
+    "မူပိုင်",
+    "youtube ပိတ်",
+    "facebook ပိတ်",
+    "fair use"
+   ],
+   "reply": [
+    "Recap က ကိုယ်ပိုင် ဇာတ်ကြောင်း + အသံနဲ့ မို့ ပိုလုံခြုံပေမဲ့ platform တစ်ခုချင်းရဲ့ စည်းကမ်းကို ကိုယ်တိုင် စစ်ပါ ⚠"
+   ]
+  },
+  {
+   "id": "step_idle",
+   "cat": "guide",
+   "when": [
+    "idle"
+   ],
+   "say": [
+    "ဘာလုပ်ရမလဲ",
+    "စမယ်",
+    "start",
+    "ဘယ်ကစရမလဲ",
+    "how"
+   ],
+   "reply": [
+    "🎬 ဇာတ်ကား video အရင်ရွေးပါ (၂ နာရီလောက်)။ ကော်ပီ မကူးဘူး — ဖုန်းထဲကအတိုင်း ဖတ်တယ် 📱"
+   ],
+   "chips": [
+    {
+     "label": "🎬 Video ရွေး",
+     "do": "pick_video"
+    }
+   ]
+  },
+  {
+   "id": "step_video",
+   "cat": "guide",
+   "when": [
+    "video"
+   ],
+   "say": [
+    "ဘာလုပ်ရမလဲ",
+    "ဘယ်လိုဆက်ရမလဲ",
+    "next",
+    "how"
+   ],
+   "reply": [
+    "Recap ဘယ်နှမိနစ် လုပ်မလဲ ရွေးပါ 👇"
+   ],
+   "chips": [
+    {
+     "label": "10'",
+     "do": "target:10"
+    },
+    {
+     "label": "12'",
+     "do": "target:12"
+    },
+    {
+     "label": "15'",
+     "do": "target:15"
+    }
+   ]
+  },
+  {
+   "id": "step_part",
+   "cat": "guide",
+   "when": [
+    "part"
+   ],
+   "say": [
+    "ဘာလုပ်ရမလဲ",
+    "ဘယ်လိုဆက်ရမလဲ",
+    "how",
+    "ဘာဆက်လုပ်ရမလဲ"
+   ],
+   "reply": [
+    "{stepText}"
+   ],
+   "chips": [
+    {
+     "label": "📊 Status",
+     "do": "status"
+    }
+   ]
+  },
+  {
+   "id": "step_voice",
+   "cat": "guide",
+   "when": [
+    "voice",
+    "ready"
+   ],
+   "say": [
+    "ဘာလုပ်ရမလဲ",
+    "ဘယ်လိုဆက်ရမလဲ",
+    "how"
+   ],
+   "reply": [
+    "🎙 အသံ ရွေးပြီး 🎯 အရှည်ကိုက်ပါ → 🎬 ထုတ်"
+   ],
+   "chips": [
+    {
+     "label": "👩 နီလာ",
+     "do": "pick_voice:Nilar"
+    },
+    {
+     "label": "👨 သီဟ",
+     "do": "pick_voice:Thiha"
+    }
+   ]
+  },
+  {
+   "id": "step_render",
+   "cat": "guide",
+   "when": [
+    "render"
+   ],
+   "say": [
+    "ဘာလုပ်ရမလဲ",
+    "ဘယ်လောက်ကျန်လဲ",
+    "how",
+    "ကြာဦးမလား"
+   ],
+   "reply": [
+    "{stepText} ⏳ screen ပိတ်လည်း ဆက်ထုတ်နေမယ် 📱"
+   ]
+  },
+  {
+   "id": "step_done",
+   "cat": "guide",
+   "when": [
+    "done"
+   ],
+   "say": [
+    "ဘာလုပ်ရမလဲ",
+    "ပြီးရင်",
+    "how",
+    "နောက်"
+   ],
+   "reply": [
+    "💾 Gallery သိမ်း · 📤 Share · 🆕 နောက်တစ်ကား 🎬"
+   ],
+   "chips": [
+    {
+     "label": "💾 Gallery",
+     "do": "save_out"
+    },
+    {
+     "label": "🆕 Project အသစ်",
+     "do": "new_project"
+    }
+   ]
+  },
+  {
+   "id": "_fallback",
+   "cat": "system",
+   "say": [],
+   "reply": [
+    "ဆောရီးနော် 🙏 Zippy နားမလည်လိုက်ဘူး… {stepText}",
+    "အဲ့ဒါ Zippy မသိသေးဘူး 😅 recap နဲ့ ပတ်သက်တာ မေးရင် ကူမယ် 💪",
+    "ဟင် 🤔 မရှင်းဘူး… `help` ရိုက်ကြည့်ပါ"
+   ]
+  },
+  {
+   "id": "_fallback_many",
+   "cat": "system",
+   "say": [],
+   "reply": [
+    "Zippy နားမလည်တာ များနေပြီ 🙈 အောက်က ခလုတ်တွေ သုံးကြည့်ပါ 👇"
+   ],
+   "chips": [
+    {
+     "label": "❓ help",
+     "say": "help"
+    },
+    {
+     "label": "📊 Status",
+     "do": "status"
+    },
+    {
+     "label": "✏️ Editor",
+     "do": "open_editor"
+    }
+   ]
+  }
+ ]
+}
